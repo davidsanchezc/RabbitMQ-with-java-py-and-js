@@ -12,7 +12,7 @@ amqp.connect('amqp://localhost', function(error0, connection) {
         }
 
         var queue = 'hello';
-        var msg = 'Hello World!';
+        var msg = 'Hello World! sent from Javacript';
 
         channel.assertQueue(queue, {
             durable: false
