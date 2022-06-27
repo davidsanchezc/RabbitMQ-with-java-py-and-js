@@ -1,0 +1,4 @@
+create database ventas;
+\c ventas;
+create table usuarios(id varchar(5), nombre varchar(30), correo varchar(100), clave varchar(10), dni varchar(10),telefono varchar(10),
+amigos_frecuentes varchar(100));

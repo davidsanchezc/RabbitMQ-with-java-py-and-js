@@ -1,0 +1,47 @@
+Create DATABASE DNI;
+
+USE DNI;
+
+CREATE TABLE DNI(id VARCHAR(3), dni VARCHAR(8) NOT NULL, nombre VARCHAR(40) NOT NULL, apellidos VARCHAR(40) NOT NULL, lugnacimiento VARCHAR(30) NOT NULL, ubigeo VARCHAR(6) NOT NULL, direccion VARCHAR(80) NOT NULL);
+
+INSERT INTO DNI VALUES 
+(101, '79304278', 'Juan Gabriel', 'Paredes Perez', 'Ayacucho', '347929', 'Calle Pedro Jose Frias 302 - Jesus Maria'),
+(102, '73394219', 'Lizeth Rocio', 'Tami Huayna', 'Ancash',  '423419', 'Jr. Dionicio Cahuaypata 141 Urb. Tungasuca - Carabayllo'),
+(103, '94329842', 'Melanny Daniela', 'Torres Calero', 'Lima', '312901', 'Los Parques del Rey Psj. Las violetas Mz. M Lt. 10 - Carabayllo'),
+(104, '81232491', 'Milene Angeli', 'Augusto Achic', 'Lima', '348239', 'Jr. Sanchez Cerro 539 - Carabayllo'),
+(105, '84194022', 'Riccardo Paul', 'Blacido Espinoza', 'Piura', '712393', 'Mz. B1 Lt. 18 Urb. Esmeralda - Carabayllo'),
+(106, '70181291', 'Katerin Andrea', 'Cuba Gomez', 'Junin', '298329', 'Av. Mariano Condorcanqui Asoc. Villa Izasiga Mz. A Lt. 8 - Comas'),
+(107, '71348239', 'Leonardo Marcelo', 'Cox Balbuena', 'Madre de Dios', '931206', 'Mz. K Lt. 14 Urb. Año Nuevo - Comas'),
+(108, '71969705', 'Melissa Allison', 'Garcia Cayetano', 'Lima', '429765', 'Jr. Beatita de Humay 127 Urb. Señor de los Milagros - Comas'),
+(109, '79342001', 'Piero Antony', 'Mendoza Mendoza', 'Lima', '819193', 'Psj. Francisco de Zela 168 Urb. San agustin - Comas'),
+(110, '82403202', 'Benjamin Enoc', 'Hernandez Andia', 'Ica', '129381', 'Av. Universitaria 7046 Santa Luzmila - Comas'),
+(111, '62399101', 'Gonzalo Gino', 'Vichez Juarez', 'Huancavelica', '821391', 'Asoc. Leoncio Prado Oeste Mz. F1 Lt. 7 Zapallal - Puente Piedra'),
+(112, '91283241', 'Migceli Xiomara', 'Oxsa Brañez', 'Amazonas', '819231', 'Clle. Los Lirios 302 Zapallal - Puente Piedra'),
+(113, '92831201', 'Adrian Jafet', 'Sanchez Ñaccha', 'Lima', '384192', 'Jr. Caraz 870 Urb. Mercurio - Los Olivos'),
+(114, '81923912', 'Luis Eduardo', 'Herrera Paz', 'Lima', '293823', 'Jr. Antonio Cabo 558 Urb. El Trébol - Los Olivos'),
+(115, '64164772', 'Esther Milagros', 'Jara Castañeda', 'Moquegua', '829419', 'Clle. Las Turquesas 1390 Urb. Angelica Gamarra 1era Etapa - Los Olivos'),
+(116, '82934129', 'Franco Jamil', 'Zambrano Galvez', 'Lima', '831291', 'Clle. José de la Riva Aguero 808 Dep. 403 - Los Olivos'),
+(117, '92301813', 'Jeremy Alexander', 'Bruno Moreno', 'Loreto', '928314', 'Clle. Los Lirios 609 Urb. Simon Bolivar - Los Olivos'),
+(118, '92039210', 'Diego Fabian', 'Pedemonte Socola', 'Ica', '129282', 'Jr. Nestor Gambetta Alta Mz. E Lt. 39 Clle. Ancash - Callao'),
+(119, '62981294', 'Diaan Carolina', 'Rios Vasquez', 'Lambayeque', '293011', 'Jr. José María Arguedas Mz. D Lt. 48 - SMP'),
+(120, '58310248', 'Antonella Cristina', 'Araujo Melendez', 'Lima', '923103', 'Jr. Guillermo Zuniga 809 Urb. San German - SMP'),
+(121, '82394193', 'Melissa Yasmin', 'Balvin Giron', 'Lima', '398419', 'Jr. El Chaco 2656 Av. Perú - SMP'),
+(122, '71291204', 'Jhon Patricio', 'Hinostroza Contreras', 'Tumbes', '821302', 'Jr. Napoles 239 Av. Fiori - SMP'),
+(123, '91383124', 'Jose Martin', 'Mercado Rodriguez', 'Piura', '283129', 'Clle. Manuel Moncloa Cova Rubias 2888 Urb. Benavides - Cercado de Lima'),
+(124, '72131201', 'Victoria Dayana', 'Teran Rabanal', 'Piura', '284128', 'Clle. Juan Pablo Fernandini 1060 Urb. Angamos - Breña'),
+(125, '60283129', 'Martha Valeria', 'Espinoza Peralta', 'Lima', '931049', 'Jr. Enrique Nerimi 904 Urb. Los Claveles - San Luis'),
+(126, '59821489', 'Harumi Alessandra', 'Chaico Franchesca', 'Ica', '120932', 'Clle. Manuel Moncloa Cova Rubias 2797 Urb. Benavides - Cercado de Lima'),
+(127, '92100119', 'Diego Renald', 'Vizarreta Alejos', 'La Libertad', '293822', 'Av. Los patriotas 486 Maranga - San Miguel'),
+(128, '81298121', 'Lucero Gladys', 'Izquierdo Gomez', 'Lima', '923012', 'Av. Santa Rosa Mz. D Lt. 8 Asoc. Israel Cdra. 6 - SJL'),
+(129, '74188933', 'Lucia Luisa', 'Luna Victorio', 'Ayacucho', '283102', 'Jr. General Odonovan Mz. D6 Lt. 23 Urb. Mariscal Caceres - SJL'),
+(130, '79124821', 'Kiara Lucia', 'Fuster Chacchi', 'Lima', '934181', 'Av. Nicolas de Pierola Mz. 20 - Lurigancho'),
+(131, '71293812', 'Rousse Corayma', 'Huamani Vargas', 'Arequipa', '819491', 'AA. HH. Micaela Bastidas Mz. T. Lt. 21 - Ate'),
+(132, '68923048', 'Meily Gladys', 'Mejia Tenorio', 'Lambayque', '720410', 'Asoc. Juan Pablo II Mz. I Lt. 11 Clle. Polonia - VMT'),
+(133, '68312999', 'Adriana Lucia', 'Huaquipaco Valdez', 'Huanuco', '834102', 'Av. Nicolas de Pierola 1012 - VMT'),
+(134, '72948012', 'Abraham Alfredo', 'Abarca Ccasani', 'Tacna', '384932', 'Asoc. San Gabriel Alto Jr. Ladislao Espinar Mz. W18 Lt. 12 - VMT'),
+(135, '83292213', 'Rosario del Pilar', 'Oros Guimaray', 'Ayacucho', '298249', 'Av. Andres Avelino Caceres Mz. B Lt. 4 Asoc. Las Lomas - VMT'),
+(136, '93210302', 'Keily Yelitza', 'Roncal Rivera', 'Ayacucho', '923482', 'Clle. 11 Mz. A Lt. 11 Urb. Pachacamac Quebrada Nuevo Horizonte - VES'),
+(137, '73025823', 'Silvia Rosario', 'Chalco Mendoza', 'Huanuco', '483942', 'Mz. A Lt. 34 Urb. Pacachacamac 4ta Etapa - VES'),
+(138, '83048332', 'Eliar Arturo', 'Santos Diaz', 'Lima', '832942', 'Urb. Matellini Tambo Real 255 Dpto. 304 - Chorrillos'),
+(139, '84129282', 'Stephania Veronica', 'Silva Vargas', 'Piura', '489239', 'Jr. Grau 783 - Magdalena del Mar'),
+(140, '82948129', 'Teresa Carolina', 'Peralta Gutierrez', 'Lima', '384932', 'Av. Santa Rosa 1803 - Magdalena del Mar');

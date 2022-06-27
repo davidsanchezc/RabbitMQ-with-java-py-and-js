@@ -4,14 +4,14 @@ const connectionData = {
     user: 'postgres',
     host: 'localhost',
     database: 'postgres',
-    password: '',
+    password: 'aurorabel',
     port: 5432,
 }
 const client = new Client(connectionData)
 client.connect()
-client.query('SELECT * FROM usuarios')
+client.query("INSERT INTO usuarios VALUES ('Julissa','jefa')")
     .then(response => {
-        console.log(response.rows)
+        console.log("\n")
         client.end()
     })
     .catch(err => {

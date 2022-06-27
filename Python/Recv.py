@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import pika, sys, os, MySQLdb
+import pika, sys, os
 
 def main():
     connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))

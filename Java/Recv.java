@@ -1,4 +1,5 @@
 package Java;
+
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
@@ -6,7 +7,7 @@ import com.rabbitmq.client.DeliverCallback;
 import java.nio.charset.StandardCharsets;
 
 public class Recv {
-    private final static String QUEUE_NAME = "hello";
+    private final static String QUEUE_NAME = "primer_envio";
 
     public static void main(String[] argv) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
@@ -21,6 +22,7 @@ public class Recv {
             String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
             System.out.println(" [x] Received '" + message + "'");
         };
-        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> { });
+        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {
+        });
     }
 }

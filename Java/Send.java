@@ -15,10 +15,18 @@ public class Send {
               String message = "Hello World! sent from Java";
               channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
               System.out.println(" [x] Sent '" + message + "'");
-
+              
             
         }
         
     }
   }
-  
+
+  // id: 1 (definido por ud)
+  // nombre: fulano
+  // correo: fulano@memail.com
+  // clave: 1234
+  // dni: 20453629
+  // telefono: 89674539
+  // amigo(s) frecuente(s): rosa juan lucas (pueden ser cero o varios amigos, sus ids se
+  // encuentren en la misma BD1)
