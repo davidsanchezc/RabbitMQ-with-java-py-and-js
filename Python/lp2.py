@@ -1,14 +1,19 @@
 #!/usr/bin/env python
 import pika, sys, os
 import mysql.connector
+from time import time
 
 def main():
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+    credentials = pika.PlainCredentials('davidsanchezc', 'davidsanchezc')
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost',credentials=credentials))
     channel = connection.channel()
 
     channel.queue_declare(queue='primer_envio')
 
+    elapsed_time = []
+
     def callback(ch, method, properties, body):
+        start_time = time()
         msg = body.decode('utf-8')
         id, nombre, correo, clave, dni, telefono, amigos = msg.split(",")
         print("[x] Received ID: {}  NOMBRE: {}  DNI: {}  AMIGOS: {}".format(id, nombre, dni, amigos))
@@ -17,6 +22,9 @@ def main():
 
         if aprobado:
            enviar(msg)
+        
+        elapsed_time.append(time() - start_time)
+        print("TIEMPO DE EJECUCIÓN:", sum(elapsed_time), "\n")
 
     channel.basic_consume(queue='primer_envio', on_message_callback=callback, auto_ack=True)
 
@@ -33,28 +41,31 @@ def verificar(dni, amigos):
 
     cursor1.execute("SELECT * FROM DNI WHERE dni = " + dni)
     resultado = cursor1.fetchall()
-    print("DATOS ENCONTRADOS:", resultado)
 
     if len(resultado) != 0:
         cursor2 = cnx.cursor()
 
         arramigos = amigos.split()
         print(arramigos)
-        for amigo in arramigos:
-            cursor2.execute("SELECT * FROM DNI WHERE dni =" + amigo)
-            amigoresult = cursor2.fetchall()
-            
-            if len(amigoresult) == 0:
-                print("El amigo con dni {} no existe".format(amigo))
-                break
-        
-        if len(amigoresult) != 0:
+        if len(arramigos) == 0:
             aprobado = 1
-            print("Todos los amigos existen")
-        
-        cursor2.close()
+
+        else:
+            for amigo in arramigos:
+                cursor2.execute("SELECT * FROM DNI WHERE dni =" + amigo)
+                amigoresult = cursor2.fetchall()
+                
+                if len(amigoresult) == 0:
+                    print("NO ENVIADO: El amigo con dni {} no existe".format(amigo))
+                    break
+            
+            if len(amigoresult) != 0:
+                aprobado = 1
+                print("ENVIADO CON EXITO: Todos los amigos existen")
+            
+            cursor2.close()
     
-    else: print("El usuario ingresado no existe")
+    else: print("NO ENVIADO: El usuario ingresado no existe")
     cursor1.close()
     cnx.close()
 
